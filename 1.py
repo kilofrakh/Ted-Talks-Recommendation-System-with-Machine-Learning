@@ -113,3 +113,22 @@ def get_similarities(talk_content, data=df):
         pea.append(pea_sim)
 
     return sim, pea
+
+def recommend_talks(talk_content, data=data):
+
+    data['cos_sim'], data['pea_sim'] = get_similarities(talk_content)
+
+    data.sort_values(by=['cos_sim', 'pea_sim'], ascending=[
+                     False, False], inplace=True)
+
+    print(data[['main_speaker', 'details']].head())
+
+talk_content = ['Time Management and working\
+hard to become successful in life']
+recommend_talks(talk_content)
+
+talk_content = ['Climate change and impact on the health\
+. How can we change this world by reducing carbon footprints?']
+recommend_talks(talk_content)
+
+
