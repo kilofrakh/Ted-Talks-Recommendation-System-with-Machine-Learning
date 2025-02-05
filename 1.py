@@ -13,3 +13,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 nltk.download('stopwords')
 warnings.filterwarnings('ignore')
+
+
+df = pd.read_csv('tedx_dataset.csv')
+print(df.head())
+
