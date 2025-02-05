@@ -83,3 +83,33 @@ wc = WordCloud(max_words=1000,
 plt.axis('off')
 plt.imshow(wc)
 plt.show()
+
+vectorizer = TfidfVectorizer(analyzer = 'word')
+vectorizer.fit(df['details'])
+
+
+def get_similarities(talk_content, data=df):
+
+    # Getting vector for the input talk_content.
+    talk_array1 = vectorizer.transform(talk_content).toarray()
+
+    # We will store similarity for each row of the dataset.
+    sim = []
+    pea = []
+    for idx, row in data.iterrows():
+        details = row['details']
+
+        # Getting vector for current talk.
+        talk_array2 = vectorizer.transform(
+            data[data['details'] == details]['details']).toarray()
+
+        # Calculating cosine similarities
+        cos_sim = cosine_similarity(talk_array1, talk_array2)[0][0]
+
+        # Calculating pearson correlation
+        pea_sim = pearsonr(talk_array1.squeeze(), talk_array2.squeeze())[0]
+
+        sim.append(cos_sim)
+        pea.append(pea_sim)
+
+    return sim, pea
