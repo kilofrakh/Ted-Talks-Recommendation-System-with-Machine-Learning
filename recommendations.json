@@ -1,4 +1,24 @@
 {
+    "talk content": "succsess",
+    "recommendations": [
+        {
+            "main_speaker": {
+                "0": "Alexandra Auer",
+                "1": "Elizabeth Gilbert",
+                "2": "Butterscotch",
+                "3": "Ethan Lisi",
+                "4": "Daniel Finkel"
+            },
+            "details": {
+                "0": "The intangible effects of walls More barriers exist now than at the end of World War II, says designer Alexandra Auer. And when you erect one wall, you unwittingly create a second -- an \"us\" versus \"them\" partition in the mind that compromises our collective safety. With intriguing results from her social design project focused on two elementary schools separated by a fence, Auer encourages us to dismantle our biases and regain perspective on all the things we have in common.",
+                "1": "It's OK to feel overwhelmed. Here's what to do next If you're feeling anxious or fearful during the coronavirus pandemic, you're not alone. Offering hope and understanding, author Elizabeth Gilbert reflects on how to stay present, accept grief when it comes and trust in the strength of the human spirit. \"Resilience is our shared genetic inheritance,\" she says. (This virtual conversation is part of the TED Connects series, hosted by head of TED Chris Anderson and head of curation Helen Walters. Recorded April 2, 2020)",
+                "2": "\"Accept Who I Am\" Firing off her formidable beatboxing skills, musician Butterscotch serenades -- over a hauntingly beautiful backtrack made live on stage -- and shares pieces of her own story as a shoutout to those struggling through dark times. \"We have to be compassionate with ourselves, allow acceptance for who we are -- even on our worst days when we're still doing our best,\" she says.",
+                "3": "What it's really like to have autism \"Autism is not a disease; it's just another way of thinking,\" says Ethan Lisi. Offering a glimpse into the way he experiences the world, Lisi breaks down misleading stereotypes about autism, shares insights into common behaviors like stimming and masking and promotes a more inclusive understanding of the spectrum.",
+                "4": "Can you solve the sea monster riddle? According to legend, once every thousand years a host of sea monsters emerges from the depths to demand tribute from the floating city of Atlantartica. As the ruler of the city, you'd always dismissed the stories... until today, when they rose out of the roiling waters, surrounded your city and demanded a ransom of pearls. Can you figure out which chest of pearls is the ransom? Dan Finkel shows how. [Directed by Artrake Studio, narrated by Addison Anderson]."
+            }
+        }
+    ]
+}{
     "talk content": "peace",
     "recommendations": [
         {
