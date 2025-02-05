@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import json
 import nltk
 import string
 import warnings
@@ -119,6 +119,10 @@ def recommend_talks(talk_content, data=data):
     data['cos_sim'], data['pea_sim'] = get_similarities(talk_content)
     data.sort_values(by=['cos_sim', 'pea_sim'], ascending=[False, False], inplace=True)
     print(data[['main_speaker', 'details']].head())
+    with open('recommendations.json', 'w') as f:
+        json.dump(data[['main_speaker', 'details']].head(), f, indent=4)
+    
+    
 
 if __name__ == "__main__":
     talk_content = input("Enter the talk content: ")
