@@ -10,6 +10,21 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import os
+l = {
+   "talk content": [],
+   "recommendations": []
+}
+
+def save_data():
+    with open("recommendations.json", "w") as file:
+        json.dump(l, file, indent=4)
+
+def load_data():
+    global l
+    if os.path.exists("recommendations.json"):
+        with open("recommendations.json", "r") as file:
+            l = json.load(file)
 
 nltk.download('stopwords')
 warnings.filterwarnings('ignore')
@@ -119,12 +134,14 @@ def recommend_talks(talk_content, data=data):
     data['cos_sim'], data['pea_sim'] = get_similarities(talk_content)
     data.sort_values(by=['cos_sim', 'pea_sim'], ascending=[False, False], inplace=True)
     print(data[['main_speaker', 'details']].head())
+    l["recommendations"].append(data[['main_speaker', 'details']].head().to_dict())
     
-    
+
 
 if __name__ == "__main__":
     talk_content = input("Enter the talk content: ")
     recommend_talks([talk_content])
+    l.update({"talk content": talk_content})
     with open('recommendations.json', 'w') as f:
-        json.dump(talk_content, f, indent=4)
-        json.dump(recommend_talks([talk_content]), f, indent=4)
+        json.dump(l, f, indent=4)
+        
