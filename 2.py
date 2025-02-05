@@ -119,11 +119,12 @@ def recommend_talks(talk_content, data=data):
     data['cos_sim'], data['pea_sim'] = get_similarities(talk_content)
     data.sort_values(by=['cos_sim', 'pea_sim'], ascending=[False, False], inplace=True)
     print(data[['main_speaker', 'details']].head())
-    with open('recommendations.json', 'w') as f:
-        json.dump(data[['main_speaker', 'details']].head(), f, indent=4)
     
     
 
 if __name__ == "__main__":
     talk_content = input("Enter the talk content: ")
     recommend_talks([talk_content])
+    with open('recommendations.json', 'w') as f:
+        json.dump(talk_content, f, indent=4)
+        json.dump(recommend_talks([talk_content]), f, indent=4)
